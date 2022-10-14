@@ -6,10 +6,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyWebsite - Home</title>
 
+    <link rel="stylesheet/less" type="text/css" href="less/keyframes.less" />
     <link rel="stylesheet/less" type="text/css" href="less/master.less" />
+    <link rel="stylesheet/less" type="text/css" href="less/slidePages.less" />
     <script src="https://cdn.jsdelivr.net/npm/less" ></script>
 </head>
 <body>
+
+    <section class="page" id="slideRight">
+        <div id="sliderContainer">
+            
+            <section id="leftBar">
+                <ul id="barItemUL">
+                    <li>
+                        <p>Home</p>
+                    </li>
+                    <li>
+                        <p>Ich</p>
+                    </li>
+                    <li class="big">
+                        <p>Projekte</p>
+                    </li>
+                    <li class="xxl">
+                        <p>Downloads</p>
+                    </li>
+                </ul>
+                <ul id="barSocialUL">
+                    <li>
+                        <img src="rsc/Icons/DiscordBlack.png">
+                    </li>
+                    <li>
+                        <img src="rsc/Icons/YouTube.png">
+                    </li>
+                    <li>
+                        <img src="rsc/Icons/GitHub.png">
+                    </li>
+                </ul>
+            </section>
+            <section id="slidePageBox">
+                <article id="slidePage1" class="slidePage">
+
+                    <div id="leftPart">
+                        <h1>Zorrle001</h1>
+                        <h2>Simon M.</h2>
+                        <h3>Java Applications & Web Frontent/Backend</h3>
+                    </div>
+                    <div id="rightPart">
+                        <div id="imageBox">
+                            <img src="rsc/Me.jpg">
+                            <img src="rsc/Schere.png" id="Schere">
+                        </div>
+                        <div id="imageBorder"></div>
+                        <div id="imageCircle"></div>
+                    </div>
+
+                </article>
+
+                <article id="slidePage2" class="slidePage">
+                    <section id="sliderPage2BG">
+                        <img src="rsc/layout/Layout1.png">
+                        <img src="rsc/layout/Layout2.gif">
+                    </section>
+                    <section id="textBox">
+                        <h1>Moderne und nutzerfreundliche Interfaces</h1>
+                        <h2>Perfekt optimiert auf jede Bildschirmgröße und jedes Seitenverhältnis</h2>
+                    </section>
+                </article>
+
+                <article id="formBox">
+                    <div id="triangle1"></div>
+                    <div id="triangle2"></div>
+                    <div id="parallelogram1"></div>
+                </article>
+            </section>
+
+        </div>
+    </section>
+    <section class="page" id="slideBottom"></section>
+
     <article id="home">
         <section id="background">
             <img src="rsc/LightBackground.jpg">
@@ -18,7 +92,7 @@
         </section>
         <section id="homeUI">
             <h2 id="title">Home</h2>
-            <ul id="menu">
+            <ul id="menu" class="solid">
                 <li>Projekte</li>
                 <li>Downloads</li>
             </ul>
@@ -31,9 +105,106 @@
     </article>
 
     <script>
+
+        var canScroll = true;
+        var lastPage = 0;
+
         window.addEventListener("wheel", function(e) {
             console.log(e.deltaY + ", " + e.deltaMode);
+
+            if(canScroll == false) {
+                return;
+            }
+
+            if(e.deltaY > 0) {
+
+                let pageBox = document.getElementById("slidePageBox");
+                let activePage = parseInt(getComputedStyle(pageBox).getPropertyValue("--page"));
+                let newPage = activePage + 1;
+                let newPageElement = document.getElementById("slidePage" + (newPage + 1));
+
+                if(document.body.classList.contains("hide") == false) {
+                    document.body.classList.remove("show");
+                    setTimeout(() => {
+                        document.body.classList.add("hide");
+                    }, 5);
+
+                    canScroll = false;
+                    setTimeout(() => {
+                        canScroll = true;
+                    }, 2500);
+                    return;
+                }else {
+
+                    if(newPageElement == null) {
+                        return;
+                    }
+
+                    let newBackground = getComputedStyle(newPageElement).getPropertyValue("--bg")
+
+                    pageBox.style.setProperty('--page', newPage);
+                    pageBox.style.backgroundColor = newBackground;
+
+                    setFormColors(newPageElement);
+
+                }
+
+                canScroll = false;
+                setTimeout(() => {
+                    canScroll = true;
+                }, 1000);
+            }else if(e.deltaY < 0) {
+
+                let pageBox = document.getElementById("slidePageBox");
+                let activePage = parseInt(getComputedStyle(pageBox).getPropertyValue("--page"));
+                let newPage = activePage - 1;
+                let newPageElement = document.getElementById("slidePage" + (newPage + 1));
+
+                if(document.body.classList.contains("hide") == true && activePage <= 0) {
+                    document.body.classList.add("fixedPositions");
+                    document.body.classList.remove("hide");
+                    setTimeout(() => {
+                        document.body.classList.add("show");
+                        document.body.classList.remove("fixedPositions");
+                    }, 5);
+
+                    canScroll = false;
+                    setTimeout(() => {
+                        canScroll = true;
+                    }, 2500);
+                    return;
+                }else {
+                    
+                    if(newPageElement == null) {
+                        return;
+                    }
+
+                    let newBackground = getComputedStyle(newPageElement).getPropertyValue("--bg")
+
+                    pageBox.style.setProperty('--page', newPage);
+                    pageBox.style.backgroundColor = newBackground;
+
+                    setFormColors(newPageElement);
+                }
+
+                canScroll = false;
+                setTimeout(() => {
+                    canScroll = true;
+                }, 1000);
+            }
         });
+
+        function setFormColors(el) {
+
+            let triangle1 = document.getElementById("triangle1");
+            let triangle2 = document.getElementById("triangle2");
+            let parallelogram1 = document.getElementById("parallelogram1");
+
+            triangle1.style.backgroundColor = getComputedStyle(el).getPropertyValue("--triangle1");
+            triangle2.style.backgroundColor = getComputedStyle(el).getPropertyValue("--triangle2");
+            parallelogram1.style.backgroundColor = getComputedStyle(el).getPropertyValue("--parallelogram1");
+
+        }
     </script>
 
 </body>

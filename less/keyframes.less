@@ -1,0 +1,157 @@
+//HOME
+@keyframes flyIn {
+    0% {
+        right: -100%;
+    }
+    100% {
+        right: 3rem;
+    }
+}
+
+@keyframes menuIn {
+    0% {
+        right: -100%;
+    }
+    100% {
+        right: 0px;
+    }
+}
+
+@keyframes titleIn {
+    0% {
+        top: -100%;
+    }
+    100% {
+        top: 3rem;
+    }
+}
+
+@keyframes arrowIn {
+    0% {
+        bottom: -100%;
+    }
+    60% {
+        bottom: 7rem;
+    }
+    70% {
+        bottom: 7rem;
+    }
+    100% {
+        bottom: 3rem;
+    }
+}
+
+@keyframes mouseIn {
+    0% {
+        opacity: 0%;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 100%;
+        transform: scale(1);
+    }
+}
+
+@keyframes beforeIn {
+    0%, 100% {
+        opacity: 0%;
+    }
+}
+
+
+//HOME HIDE
+@keyframes rightSlideIn {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: 0px;
+        border-width: 0px;
+    }
+}
+@keyframes bottomSlideIn {
+    0% {
+        top: 100%;
+    }
+    100% {
+        top: 0px;
+    }
+}
+@keyframes contentSlideIn {
+    0% {
+        left: -100%;
+        top: 100%;
+    }
+    100% {
+        left: 0px;
+        top: 0px;
+    }
+}
+@keyframes homeSlideOut {
+    0% {
+        top: 0px;
+    }
+    100% {
+        top: -30%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//SLIDE PAGES
+@keyframes imageMovement {
+    0% {
+        margin-top: 0rem;
+        margin-left: 0rem;
+    }
+    50% {
+        margin-top: 1rem;
+        margin-left: 2rem;
+    }
+    100% {
+        margin-top: 0rem;
+        margin-left: 0rem;
+    }
+}
+
+@keyframes borderMovement {
+    0% {
+        rotate: 0deg;
+    }
+    50% {
+        rotate: -5deg;
+    }
+    100% {
+        rotate: 0eg;
+    }
+}
+
+@keyframes circleRotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}  
+
+@keyframes parallelogramMovement {
+    0% {
+        clip-path: polygon(0 11vh, 100% 0%, 100% calc(100% - 11vh), 0 100%);
+    }
+    100% {
+        clip-path: polygon(0 20vh, 100% 0%, 100% calc(100% - 20vh), 0 100%);
+    }
+}

@@ -1,0 +1,62 @@
+<!-- <article id="detailsPage">
+        
+        <section id="topBar" class="minimized">
+
+            <div id="topPart">
+                <h1>Zorrle001<span> - Full Stack Developer</span></h1>
+            </div>
+            <div id="bottomPart">
+                <div id="readingStateBox">
+                    <div class="readingState active">
+                        <p>Home</p>
+                    </div>
+                    <div class="readingLine smooth" style="--width:35%" id="projectReadingLine"></div>
+                    <div class="readingState" id="projectReadingState">
+                        <p>Projekte</p>
+                    </div>
+                    <div class="readingLine smooth"></div>
+                    <div class="readingState">
+                        <p>Downloads</p>
+                    </div>
+                </div>
+                <ul>
+                    <li>Projekte</li>
+                    <li>Downloads</li>
+                </ul>
+            </div>
+
+        </section>
+
+        <section id="pageContent">
+
+            <img id="bg" src="rsc/4kBackground.jpg">
+            <div id="blur"></div>
+
+            <h1>Meine Programmierkentnisse</h1>
+            <h2>Ich habe viel Erfahrung in den Bereichen Web- & Java-Entwicklung und teste mich immer wieder an neuen Herrausforderungen, wie neue Programmiersprachen zu lernen oder schwere Projekte umzusetzen<br><br><br>
+            Ich erstelle oft Websites mit HTML, CSS & JavaScript oder auch NodeJS Applications, mit Server-Client Communication. Teilweise mithilfe von Typescript oder auch React.<br><br>
+            Ich programmiere auch viele Java Projekte beginnend bei erleichternden Rest-APIs bis zu Minigame Minecraft Plugins via Spigot, sowie Discord Bots mithilfe der JDA</h2>
+
+            <ul>
+                <li><img src="rsc/Icons/Html5.png"></li>
+                <li><img src="rsc/Icons/CSS3.png"></li>
+                <li><img src="rsc/Icons/JavaScript.png"></li>
+                <li><h1>|</h1></li>
+                <li><img src="rsc/Icons/NodeJS.png"></li>
+                <li><img src="rsc/Icons/Typescript.png"></li>
+                <li><img src="rsc/Icons/React.png"></li>
+                <li><h1>|</h1></li>
+                <li><img src="rsc/Icons/Java.png"></li>
+                <li><img src="rsc/Icons/DiscordSmall.png"></li>
+                <li><img src="rsc/Icons/Spigot.png"></li>
+            </ul>
+        
+        </section>
+
+    </article> -->
+
+    <!-- <article id="page3">
+        
+        <h1>Hallo</h1>
+
+    </article> -->
