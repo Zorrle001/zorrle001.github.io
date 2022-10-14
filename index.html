@@ -18,7 +18,7 @@
             
             <section id="leftBar">
                 <ul id="barItemUL">
-                    <li>
+                    <li id="homeButton">
                         <p>Home</p>
                     </li>
                     <li>
@@ -116,10 +116,12 @@
                 return;
             }
 
+            let pageBox = document.getElementById("slidePageBox");
+            let activePage = parseInt(getComputedStyle(pageBox).getPropertyValue("--page"));
+            let slideBottom = document.getElementById("slideBottom");
+
             if(e.deltaY > 0) {
 
-                let pageBox = document.getElementById("slidePageBox");
-                let activePage = parseInt(getComputedStyle(pageBox).getPropertyValue("--page"));
                 let newPage = activePage + 1;
                 let newPageElement = document.getElementById("slidePage" + (newPage + 1));
 
@@ -144,6 +146,7 @@
 
                     pageBox.style.setProperty('--page', newPage);
                     pageBox.style.backgroundColor = newBackground;
+                    slideBottom.style.backgroundColor = newBackground;
 
                     setFormColors(newPageElement);
 
@@ -155,8 +158,6 @@
                 }, 1000);
             }else if(e.deltaY < 0) {
 
-                let pageBox = document.getElementById("slidePageBox");
-                let activePage = parseInt(getComputedStyle(pageBox).getPropertyValue("--page"));
                 let newPage = activePage - 1;
                 let newPageElement = document.getElementById("slidePage" + (newPage + 1));
 
@@ -183,6 +184,7 @@
 
                     pageBox.style.setProperty('--page', newPage);
                     pageBox.style.backgroundColor = newBackground;
+                    slideBottom.style.backgroundColor = newBackground;
 
                     setFormColors(newPageElement);
                 }
@@ -205,6 +207,23 @@
             parallelogram1.style.backgroundColor = getComputedStyle(el).getPropertyValue("--parallelogram1");
 
         }
+
+
+
+
+
+
+
+        document.getElementById("homeButton").addEventListener("click", () => {
+            document.body.classList.add("fixedPositions");
+            document.body.classList.remove("hide");
+            setTimeout(() => {
+                document.body.classList.add("show");
+                document.body.classList.remove("fixedPositions");
+            }, 5);
+        });
+
+
     </script>
 
 </body>
