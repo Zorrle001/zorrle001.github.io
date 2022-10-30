@@ -1,0 +1,126 @@
+@import "master";
+
+#contentSection {
+    position: absolute;
+    width: calc(100% - @leftNavWidth);
+    height: 100%;
+    top: 0px;
+    right: 0px;
+
+    background: hsl(0, 5%, 7%);
+    //background: radial-gradient(circle at 60%, rgba(18,18,18,1) 0%, rgba(0,0,0,1) 100%);
+    background: radial-gradient(circle at 60%, hsl(0, 5%, 7%) 0%, hsl(0, 5%, 0%) 100%);
+    
+    #indicatorBox {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+
+        padding: 3rem;
+
+        user-select: none;
+        
+        span {
+            color: white;
+            position: relative;
+            font-size: 5rem;
+            font-weight: 900;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+
+            width: fit-content;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0px;
+                left: 0px;
+                width: 100%;
+                height: 5px;
+                background-color: white;
+            }
+        }
+    }
+
+    #textBox {
+        position: relative;
+        width: 50%;
+        height: 100%;
+
+        padding: 3rem;
+        padding-left: 7rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h1 {
+            color: @gold;
+            font-size: 4rem;
+        }
+
+        #line {
+            border-top: 2px solid @gold;
+            height: 2px;
+            width: 40%;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #949494;
+            font-weight: 400;
+        }
+    }
+
+    #imageBox {
+        position: absolute;
+        left: 50%;
+        bottom: 0px;
+        height: 95vh;
+        //aspect-ratio: 1288 / 2047;
+        aspect-ratio: 1500 / 2047;
+
+        padding-top: 12vh;
+
+        user-select: none;
+        pointer-events: none;
+
+        #borderBackground {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-top: 3px solid @gold;
+            //border-left: 3px solid @gold;
+
+            z-index: 2;
+        }
+
+        img {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            object-fit: scale-down;
+
+            z-index: 3;
+
+            //filter: sepia(0.4) saturate(1.5);
+            filter: contrast(1.2) sepia(0.2);
+        }
+
+        #borderForeground {
+            position: absolute;
+            top: 12vh;
+            width: 100%;
+            height: calc(100% - 12vh);
+            border-right: 3px solid @gold;
+            border-left: 3px solid @gold;
+
+            background-color: transparent;
+
+            z-index: 4;
+        }
+    }
+}

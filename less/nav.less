@@ -1,0 +1,223 @@
+@import "master";
+
+#topNav {
+    position: absolute;
+    top: 0px;
+    right: 10rem;
+
+    //height: 5rem;
+    width: fit-content;
+
+    z-index: 5;
+
+    padding: 2rem;
+
+    ul {
+        list-style: none;
+        display: flex;
+        gap: 3rem;
+
+        li {
+            font-size: 1.7rem;
+            color: @fontColor;
+            cursor: pointer;
+
+            user-select: none;
+
+            &:hover {
+                color: @gold;
+            }
+
+            &.selected {
+                color: @gold;
+                //text-decoration: underline;
+            }
+        }
+    }
+}
+
+#leftNav {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: @leftNavWidth;
+    height: 100%;
+
+    background-color: #141414;
+
+    #socialList {
+        position: absolute;
+        /*bottom: 2rem;
+        left: 0px;*/
+        top: 0px;
+        left: 0px;
+
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        //justify-content: center;
+        align-items: center;
+
+        gap: 1rem;
+
+        padding-bottom: 2rem;
+        padding-top: 4rem;
+        list-style: none;
+
+        li:not(.socialIcon) {
+
+            color: @fontColor;
+            writing-mode: vertical-lr;
+            
+            height: 100%;
+            width: fit-content;
+
+            /*display: flex;
+            gap: 1.5rem;
+            align-items: center;*/
+
+            margin-bottom: 0.5rem;
+
+            p {
+                font-size: 1.7rem;
+                width: fit-content;
+                flex-shrink: 0;
+                white-space: nowrap;
+                cursor: pointer;
+            }
+
+        }
+
+        li p:hover {
+            text-decoration: underline;
+            color: @gold;
+        }
+
+        li ~ div {
+            position: relative;
+            border: 1px solid @gold;
+            width: 2px;
+            height: 100%;
+
+            &#lastMenuLine {
+                margin-bottom: 2rem;
+            }
+        }
+
+        li#fistSocialIcon {
+            margin-top: auto;
+        }
+
+        li.socialIcon {
+            position: relative;
+            width: 3rem;
+            height: 3rem;
+
+            overflow: hidden;
+            
+            padding: 0.25rem;
+            //padding: 0rem 0.5rem;
+
+            transition: padding 0.3s;
+
+            flex-shrink: 0;
+
+            cursor: pointer;
+            &:hover{
+                filter: brightness(0) invert(1);
+                padding: 0.05rem;
+            }
+
+            svg {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                object-fit: scale-down;
+                
+                * {
+                    fill: @gold;
+                }
+
+            }
+        }
+    }
+}
+
+
+#rightNav {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    
+    width: 7rem;
+    height: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+
+    padding-bottom: 1rem;
+
+    ul {
+        list-style: none;
+
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+
+        height: fit-content;
+        width: 0.75rem;
+
+        flex-direction: column;
+
+        margin-bottom: 2rem;
+
+        li {
+
+            width: 100%;
+            aspect-ratio: 1 / 1;
+
+            background-color: @indicator;
+            border-radius: 100%;
+
+            z-index: 9;
+
+            &.main {
+                background-color: @gold;
+            }
+
+        }
+    }
+
+    img {
+        width: 35%;
+        //aspect-ratio: 1 / 1.2;
+        z-index: 9;
+        margin-bottom: 1rem;
+    }
+
+    img:not(#mouse) {
+        animation: 2s arrowLoop infinite ease-in-out;
+    }
+
+    #mouse {
+        aspect-ratio: 1 / 1;
+        margin-top: 2rem;
+        width: 40%;
+        margin-bottom: 1.5rem;
+    }
+
+}
+
+@keyframes arrowLoop {
+    0%, 100% {
+        margin-bottom: 1rem;
+    }
+    50% {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+}
