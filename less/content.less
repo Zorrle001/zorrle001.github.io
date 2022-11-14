@@ -93,6 +93,12 @@
             border-top: 3px solid @gold;
             //border-left: 3px solid @gold;
 
+            //WINDOW
+            //clip-path: polygon(0% 0%, 0% 100%, 34% 100%, 37% 0, 71% 0, 73% 100%, 100% 100%, 100% 100%, 100% 0%);
+
+            //BIG
+            //clip-path: polygon(0% 0%, 0% 100%, 38% 100%, 38.2% 0, 69% 0, 73% 100%, 100% 100%, 100% 100%, 100% 0%);
+
             z-index: 2;
         }
 
@@ -106,8 +112,12 @@
 
             z-index: 3;
 
+            //opacity: 80%;
+
             //filter: sepia(0.4) saturate(1.5);
-            filter: contrast(1.2) sepia(0.2);
+            filter: contrast(1.2) sepia(0.2) saturate(1.5);
+
+            filter: contrast(1.2) sepia(0.2) saturate(1.5) brightness(0.90) grayscale(0.2);
         }
 
         #borderForeground {
@@ -140,6 +150,10 @@
         top: 50%;
         transform: translateY(-50%);
         overflow: hidden;
+
+        #borderBackground {
+            //clip-path: polygon(0% 0%, 0% 100%, 34% 100%, 37% 0, 71% 0, 73% 100%, 100% 100%, 100% 100%, 100% 0%);
+        }
 
         #borderForeground {
             border-bottom: 3px solid @gold;
