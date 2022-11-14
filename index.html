@@ -27,6 +27,21 @@
             <li>Kontakt</li>
         </ul>
     </nav>
+    <nav id="mobileNav">
+        <ul>
+            <li>
+                <p>Home</p>
+            </li>
+            <div></div>
+            <li>
+                <p>Einstellungen</p>
+            </li>
+            <div></div>
+            <li>
+                <p>Über Mich</p>
+            </li>
+        </ul>
+    </nav>
     <nav id="leftNav">
         <ul id="socialList">
             <li>
@@ -138,7 +153,8 @@
 
     <script>
         document.getElementById("mobileMenu").addEventListener("click", function() {
-            this.classList.toggle("open")
+            this.classList.toggle("open");
+            document.getElementById("mobileNav").classList.toggle("open");
         });
     </script>
 
