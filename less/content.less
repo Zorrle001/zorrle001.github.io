@@ -93,12 +93,6 @@
             border-top: 3px solid @gold;
             //border-left: 3px solid @gold;
 
-            //WINDOW
-            //clip-path: polygon(0% 0%, 0% 100%, 34% 100%, 37% 0, 71% 0, 73% 100%, 100% 100%, 100% 100%, 100% 0%);
-
-            //BIG
-            //clip-path: polygon(0% 0%, 0% 100%, 38% 100%, 38.2% 0, 69% 0, 73% 100%, 100% 100%, 100% 100%, 100% 0%);
-
             z-index: 2;
         }
 
@@ -150,10 +144,6 @@
         top: 50%;
         transform: translateY(-50%);
         overflow: hidden;
-
-        #borderBackground {
-            //clip-path: polygon(0% 0%, 0% 100%, 34% 100%, 37% 0, 71% 0, 73% 100%, 100% 100%, 100% 100%, 100% 0%);
-        }
 
         #borderForeground {
             border-bottom: 3px solid @gold;
@@ -215,6 +205,10 @@
     #mobileNav {
         display: block;
     }
+    #indicatorBox {
+        left: auto;
+        right: 0px;
+    }
 }
 
 @media (max-width: 1050px) {
@@ -225,6 +219,12 @@
         width: 100%;
         top: 0px;
         left: 0px;
+
+        #indicatorBox {
+            left: auto !important;
+            padding-top: 97px !important;
+            right: 0px;
+        }
     }
     #mobileMenu {
         display: flex !important;

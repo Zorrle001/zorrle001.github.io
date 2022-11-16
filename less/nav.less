@@ -78,14 +78,20 @@
 
             user-select: none;
 
-            &:hover {
+            a:hover {
                 color: @gold;
             }
 
-            &.selected {
+            &.selected a {
                 color: @gold;
                 //text-decoration: underline;
             }
+
+            a {
+                text-decoration: none;
+                color: @fontColor;
+            }
+
         }
     }
 }
@@ -133,6 +139,8 @@
             align-items: center;*/
 
             margin-bottom: 0.5rem;
+
+            flex-shrink: 99;
 
             p {
                 font-size: 1.7rem;
@@ -253,7 +261,7 @@
         margin-bottom: 1rem;
     }
 
-    img:not(#mouse) {
+    img:not(#mouse):not(#cantScroll) {
         animation: 2s arrowLoop infinite ease-in-out;
     }
 
@@ -262,6 +270,14 @@
         margin-top: 2rem;
         width: 40%;
         margin-bottom: 1.5rem;
+    }
+
+    &:has(#cantScroll) #mouse {
+        margin-bottom: 1rem;
+    }
+
+    #cantScroll {
+        padding: 0.5rem;
     }
 
 }
